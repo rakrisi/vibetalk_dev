@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Connect with strangers online through VibeTalk. Safe, anonymous conversations with people worldwide. Explore diverse perspectives, make meaningful connections, and expand your social circle.">
+    <meta name="keywords" content="talk to strangers, online chat, anonymous conversations, meet new people, social connection, online community">
+    <meta name="author" content="VibeTalk">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="VibeTalk - Talk to Strangers Online Safely">
+    <meta property="og:description" content="Connect with interesting people worldwide through safe, anonymous conversations on VibeTalk.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vibetalk.live">
+    <meta property="og:image" content="https://vibetalk.live/og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="VibeTalk - Talk to Strangers Online Safely">
+    <meta name="twitter:description" content="Connect with interesting people worldwide through safe, anonymous conversations on VibeTalk.">
+    
+    <title>VibeTalk - Talk to Strangers Online & Make New Connections</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        header {
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 2rem;
+            transition: color 0.3s ease;
+        }
+        
+        nav a:hover {
+            color: #667eea;
+        }
+        
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero {
+            text-align: center;
+            color: white;
+            padding: 3rem 0;
+            animation: fadeIn 0.8s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .cta-button:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+            background: white;
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .feature {
+            padding: 1.5rem;
+            text-align: center;
+            border-radius: 8px;
+            background: #f8f9fa;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .feature p {
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .benefits {
+            background: white;
+            padding: 3rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .benefits h2 {
+            color: #667eea;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+        
+        .benefits ul {
+            list-style: none;
+            columns: 2;
+            column-gap: 2rem;
+        }
+        
+        .benefits li {
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+            position: relative;
+            color: #333;
+        }
+        
+        .benefits li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .safety-section {
+            background: white;
+            padding: 3rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .safety-section h2 {
+            color: #667eea;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+        
+        .safety-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .safety-item {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-left: 4px solid #667eea;
+            border-radius: 4px;
+        }
+        
+        .safety-item h3 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+        
+        .faq {
+            background: white;
+            padding: 3rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .faq h2 {
+            color: #667eea;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+        
+        .faq-item {
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 1.5rem;
+        }
+        
+        .faq-item h3 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+        }
+        
+        footer {
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+        
+        footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .benefits ul {
+                columns: 1;
+            }
+            
+            nav a {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">VibeTalk</div>
+            <div>
+                <a href="#features">Features</a>
+                <a href="#safety">Safety</a>
+                <a href="#faq">FAQ</a>
+                <a href="https://vibetalk.live" target="_blank" rel="noopener noreferrer">Visit Site</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Connect with Strangers Online Safely</h1>
+            <p>Discover meaningful conversations with people from around the world on VibeTalk</p>
+            <a href="https://vibetalk.live" class="cta-button" target="_blank" rel="noopener noreferrer">Start Talking Now</a>
+        </section>
+
+        <section id="features" class="features">
+            <article class="feature">
+                <div class="icon">💬</div>
+                <h3>Anonymous Conversations</h3>
+                <p>Chat with strangers while maintaining your privacy. No personal information required to start connecting with interesting people worldwide.</p>
+            </article>
+            <article class="feature">
+                <div class="icon">🌍</div>
+                <h3>Global Community</h3>
+                <p>Connect with people from diverse backgrounds and cultures. Expand your perspective by engaging in conversations with individuals from every corner of the globe.</p>
+            </article>
+            <article class="feature">
+                <div class="icon">⚡</div>
+                <h3>Instant Connection</h3>
+                <p>Get matched with compatible conversation partners in seconds. Start chatting instantly without lengthy sign-up processes or complicated profiles.</p>
+            </article>
+            <article class="feature">
+                <div class="icon">🛡️</div>
+                <h3>Safe & Secure</h3>
+                <p>Advanced moderation and safety features protect all users. Report inappropriate behavior instantly and enjoy a respectful community environment.</p>
+            </article>
+            <article class="feature">
+                <div class="icon">👥</div>
+                <h3>Find Your Vibe</h3>
+                <p>Connect based on shared interests and conversation preferences. Discover people who match your energy and conversational style.</p>
+            </article>
+            <article class="feature">
+                <div class="icon">🎯</div>
+                <h3>Meaningful Interactions</h3>
+                <p>Move beyond superficial chats. Engage in deep, meaningful conversations that help you grow and understand different perspectives.</p>
+            </article>
+        </section>
+
+        <section class="benefits">
+            <h2>Why Choose VibeTalk?</h2>
+            <ul>
+                <li>No commitment required – chat as much or as little as you want</li>
+                <li>Free to use with optional premium features</li>
+                <li>Mobile-friendly platform accessible anywhere, anytime</li>
+                <li>Advanced matching algorithm finds compatible conversation partners</li>
+                <li>24/7 customer support and community moderation</li>
+                <li>Diverse user base from 150+ countries</li>
+                <li>Real-time notifications for new matches and messages</li>
+                <li>Block and report features for user safety</li>
+                <li>Interest-based filtering for better conversations</li>
+                <li>Community guidelines to ensure respectful interactions</li>
+                <li>No algorithm-driven feeds – direct peer-to-peer conversations</li>
+                <li>Regular updates with new features and improvements</li>
+            </ul>
+        </section>
+
+        <section id="safety" class="safety-section">
+            <h2>Your Safety is Our Priority</h2>
+            <div class="safety-grid">
+                <div class="safety-item">
+                    <h3>Privacy Protection</h3>
+                    <p>Your personal information is never shared. Chat anonymously and reveal only what you're comfortable sharing with other users.</p>
+                </div>
+                <div class="safety-item">
+                    <h3>Content Moderation</h3>
+                    <p>Our team monitors conversations to prevent harassment, inappropriate content, and violations of community standards.</p>
+                </div>
+                <div class="safety-item">
+                    <h3>User Control</h3>
+                    <p>Block users instantly, end conversations anytime, and customize your privacy settings to suit your comfort level.</p>
+                </div>
+                <div class="safety-item">
+                    <h3>Secure Messaging</h3>
+                    <p>All messages are encrypted to protect your conversations from unauthorized access or interception.</p>
+                </div>
+                <div class="safety-item">
+                    <h3>Verification Systems</h3>
+                    <p>Advanced systems help detect and prevent fake accounts, bots, and malicious users from joining the community.</p>
+                </div>
+                <div class="safety-item">
+                    <h3>Report & Support</h3>
+                    <p>Easily report concerning behavior and get rapid response from our support team dedicated to maintaining a safe platform.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="faq">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3>Is VibeTalk really free?</h3>
+                <p>Yes! VibeTalk is completely free to use. You can chat with strangers, make connections, and enjoy all core features without paying anything. We offer optional premium features for users who want enhanced experiences.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How do I stay safe while talking to strangers online?</h3>
+                <p>VibeTalk implements multiple safety features including anonymous profiles, content moderation, user blocking, and secure messaging. Never share personal information like your real name, address, or financial details unless you're absolutely certain about the person.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Can I choose who I talk to?</h3>
+                <p>Absolutely. You can filter by interests, age ranges, and conversation preferences. Our matching algorithm suggests compatible partners, but you're always in control of who you connect with.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What should I talk about with strangers?</h3>
+                <p>The beauty of VibeTalk is that conversations can go anywhere. Discuss hobbies, travel experiences, books, movies, life advice, or just have fun casual banter. Let the conversation flow naturally based on shared interests.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How do I report inappropriate behavior?</h3>
+                <p>If you encounter someone behaving inappropriately, use the report button in the chat interface. Provide details about the concerning behavior, and our moderation team will investigate immediately.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Can I delete my account?</h3>
+                <p>Yes, you can delete your account anytime from your account settings. All your data will be permanently removed from our servers within 30 days.</p>
+            </div>
+        </section>
+
+        <section class="hero" style="margin-top: 3rem;">
+            <h2 style="font-size: 2.5rem; color: white;">Ready to Meet New People?</h2>
+            <p>Join thousands of users on VibeTalk today and start meaningful conversations with strangers worldwide.</p>
+            <a href="https://vibetalk.live" class="cta-button" target="_blank" rel="noopener noreferrer">Join VibeTalk Now</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 VibeTalk. All rights reserved.</p>
+            <p>Visit us at <a href="https://vibetalk.live" target="_blank" rel="noopener noreferrer">vibetalk.live</a></p>
+            <p>Making connections, one conversation at a time.</p>
+        </div>
+    </footer>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "VibeTalk",
+        "description": "A platform to safely talk to strangers online and make meaningful connections with people worldwide",
+        "url": "https://vibetalk.live",
+        "applicationCategory": "SocialNetworkingApplication",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.7",
+            "ratingCount": "2500"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "VibeTalk",
+            "url": "https://vibetalk.live"
+        },
+        "features": [
+            "Anonymous Conversations",
+            "Global Community",
+            "Instant Connection",
+            "Safe & Secure",
+            "Interest Matching",
+            "Real-time Messaging"
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Is VibeTalk really free?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes! VibeTalk is completely free to use. You can chat with strangers, make connections, and enjoy all core features without paying anything."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I stay safe while talking to strangers online?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "VibeTalk implements multiple safety features including anonymous profiles, content moderation, user blocking, and secure messaging."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I choose who I talk to?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Absolutely. You can filter by interests, age ranges, and conversation preferences. Our matching algorithm suggests compatible partners."
+                }
+            }
+        ]
+    }
+    </script>
+</body>
+</html>
